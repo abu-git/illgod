@@ -44,7 +44,9 @@ function Navigation() {
                     <Link href="/biography" passHref>
                         <li className={`${router.pathname === "/biography" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Biography</li>
                     </Link>
-                    <li className='text-gray-500'>Contact</li>
+                    <Link href="/contact" passHref>
+                        <li className={`${router.pathname === "/contact" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Contact</li>
+                    </Link>
                 </ul>
 
                 <button className='lg:hidden' onClick={() => setShowSideBar(!showSideBar)}>       
@@ -78,7 +80,9 @@ function Navigation() {
                         <Link href="/biography" passHref>
                             <li className={`${router.pathname === "/biography" ? "text-white font-bold" : "text-black"} py-3`}>Biography</li>
                         </Link>
-                        <li className='py-3'>Contact</li>
+                        <Link href="/contact" passHref>
+                            <li className={`${router.pathname === "/biography" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Contact</li>
+                        </Link>
                     </ul>
                 </nav>
             </div>

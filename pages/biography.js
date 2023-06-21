@@ -2,6 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Navigation from '@/components/Navigation'
 import MiniLanding from '@/components/MiniLanding'
+import BioContent from '@/components/BioContent'
+import Footer from '@/components/Footer'
 
 
 function Biography() {
@@ -17,6 +19,8 @@ function Biography() {
             <main>
                 <Navigation />
                 <MiniLanding header="Biography" />
+                <BioContent />
+                <Footer />
             </main>
         </>
     )
