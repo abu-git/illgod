@@ -8,7 +8,7 @@ function BioContent() {
             </p>
 
             <p className='text-justify text-xl text-black mt-8 md:mt-12'>
-                He began rapping at a young age, and was influenced by American hip hop artists such as Jay-Z, Nas, and Black Thought as well American producers like Pete Rock and DJ Premier. In 2019, he released his hit single, "Respiration." The song was a success is still considered a classic. 
+                He began rapping at a young age, and was influenced by American hip hop artists such as Jay-Z, Nas, and Black Thought as well American producers like Pete Rock and DJ Premier. In 2019, he released his hit single, &quot;Respiration&quot;. The song was a success is still considered a classic. 
             </p>
 
             <p className='text-justify text-xl text-black mt-8 md:mt-12'>
