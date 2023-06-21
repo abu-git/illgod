@@ -81,7 +81,7 @@ function Navigation() {
                             <li className={`${router.pathname === "/biography" ? "text-white font-bold" : "text-black"} py-3`}>Biography</li>
                         </Link>
                         <Link href="/contact" passHref>
-                            <li className={`${router.pathname === "/biography" ? "text-white" : "text-gray-500 cursor-pointer"} py-3`}>Contact</li>
+                            <li className={`${router.pathname === "/contact" ? "text-white font-bold" : "text-black"} py-3`}>Contact</li>
                         </Link>
                     </ul>
                 </nav>
