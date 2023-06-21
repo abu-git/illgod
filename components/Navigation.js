@@ -1,7 +1,12 @@
 import React,{ useState } from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 function Navigation() {
     const [showSideBar, setShowSideBar] = useState(false)
+
+    //used for active links
+    const router = useRouter()
 
     //nav state
     const [navColor, setNavColor] = useState(false)
@@ -27,11 +32,19 @@ function Navigation() {
                 <h3 className='text-xl font-bold'>Illgod</h3>
 
                 <ul className='hidden lg:flex justify-between items-center w-2/3 text-xl'>
-                    <li>Home</li>
-                    <li>Releases</li>
-                    <li>Videos</li>
-                    <li>Bio</li>
-                    <li>Contact</li>
+                    <Link href="/" passHref>
+                        <li className={`${router.pathname === "/" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Home</li>
+                    </Link>
+                    <Link href="/releases" passHref>
+                        <li className={`${router.pathname === "/releases" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Releases</li>
+                    </Link>
+                    <Link href="/videos" passHref>
+                        <li className={`${router.pathname === "/videos" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Videos</li>
+                    </Link>
+                    <Link href="/biography" passHref>
+                        <li className={`${router.pathname === "/biography" ? "text-white" : "text-gray-500 cursor-pointer"}`}>Biography</li>
+                    </Link>
+                    <li className='text-gray-500'>Contact</li>
                 </ul>
 
                 <button className='lg:hidden' onClick={() => setShowSideBar(!showSideBar)}>       
@@ -53,10 +66,18 @@ function Navigation() {
                     </div>
 
                     <ul className='flex flex-col mt-16 text-lg text-center'>
-                        <li className='py-3 font-bold text-white'>Home</li>
-                        <li className='py-3'>Releases</li>
-                        <li className='py-3'>Videos</li>
-                        <li className='py-3'>Bio</li>
+                        <Link href="/" passHref>
+                            <li className={`${router.pathname === "/" ? "text-white font-bold" : "text-black"} py-3`}>Home</li>
+                        </Link>
+                        <Link href="/releases" passHref>
+                            <li className={`${router.pathname === "/releases" ? "text-white font-bold" : "text-black"} py-3`}>Releases</li>
+                        </Link>
+                        <Link href="/videos" passHref>
+                            <li className={`${router.pathname === "/videos" ? "text-white font-bold" : "text-black"} py-3`}>Videos</li>
+                        </Link>
+                        <Link href="/biography" passHref>
+                            <li className={`${router.pathname === "/biography" ? "text-white font-bold" : "text-black"} py-3`}>Biography</li>
+                        </Link>
                         <li className='py-3'>Contact</li>
                     </ul>
                 </nav>
