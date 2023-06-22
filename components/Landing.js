@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function Landing() {
   return (
@@ -8,7 +9,10 @@ function Landing() {
             <img src="/landing.jpg" alt="Illgod website landing image" className='w-full h-screen object-cover brightness-[0.1]' />
 
             <div className='flex flex-col justify-center items-center p-12 -mt-[80vh] md:-mt-[70vh] brightness-100'>
-                <img src="/atimeforus.jpg" className='cursor-pointer' alt="Illgod | A Time for Us" width={220} height={220} />
+                <Link href="/releases/a-time-for-us" passHref>
+                    <img src="/atimeforus.jpg" className='cursor-pointer' alt="Illgod | A Time for Us" width={220} height={220} />
+                </Link>
+                
                 <h2 className='italic text-3xl font-extrabold text-white pt-5'>A Time for Us</h2>
 
                 <div className='mt-8 flex justify-center items-center'>                                    
