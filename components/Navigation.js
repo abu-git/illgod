@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Navigation() {
     const [showSideBar, setShowSideBar] = useState(false)
@@ -29,7 +30,12 @@ function Navigation() {
         <div className={`${navColor ? "bg-black" : "bg-transparent"} text-white w-full fixed top-0 z-10 opacity-100 px-9 md:px-12 py-5 rounded-sm drop-shadow-md`}>
             {/* Large screen navigation */}
             <nav className='flex justify-between items-center'>
-                <h3 className='text-xl font-bold'>Illgod</h3>
+                <Link href="/" passHref>
+                    <div className='flex justify-center items-center cursor-pointer'>
+                        <Image src="/android-chrome-192x192.png" alt="Illgod logo" width={23} height={23} />
+                        <h3 className='ml-2 font-bold text-xl'>Illgod</h3>
+                    </div>
+                </Link>
 
                 <ul className='hidden lg:flex justify-between items-center w-2/3 text-xl'>
                     <Link href="/" passHref>
