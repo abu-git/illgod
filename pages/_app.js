@@ -1,7 +1,18 @@
 import '@/styles/globals.css'
+import Script from 'next/script'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
+
+/* Google Analytics ----
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2EW9HS66GF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2EW9HS66GF');
+</script> */
 
 
 /* Page Loader settings ----------------------------------*/
@@ -41,6 +52,17 @@ function Loading(url){
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Script strategy='lazyOnload' src={`https://www.googletagmanager.com/gtag/js?id=G-2EW9HS66GF`} />
+      <Script id='analytics' strategy='lazyOnload'>
+        {
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'G-2EW9HS66GF');
+          `
+        }
+      </Script>
       <Loading />
       <Component {...pageProps} />
     </>
