@@ -1,18 +1,39 @@
 import React from 'react'
+import Head from 'next/head'
 import Image from 'next/image'
 import MiniLanding from '@/components/MiniLanding'
 import SlugNavigation from '@/components/SlugNavigation'
 import Footer from '@/components/Footer'
 
-//import { v2 as cloudinary } from 'cloudinary'
+import { v2 as cloudinary } from 'cloudinary'
 
 import dbConnect from '@/lib/dbConnect'
 import IllgodRelease from '@/models/IllgodRelease'
 
-function TheRelease({release, tracklist}) {
+function TheRelease({release, tracklist, ogImageUrl}) {
     return (
         <>
+            <Head>
+                <title>Illgod | {release.title}</title>
+                <meta name="description" content="Illgod | Official Website" />
+                <meta property='og:description' content={release.title} />
+                <meta  property='og:image' itemProp="image" content={ogImageUrl}/>
+                <meta  property='og:image:secure_url' content={ogImageUrl}/>
+                <meta property="og:url" content={`https://illgod.vercel.app/releases/${release.slug}`} />
+                <meta property="og:image:width" content="2024" />
+                <meta property="og:image:height" content="1012" />
+                <meta property="og:type" content="website" />
 
+                <meta property='twitter:card' content='summary_large_image' />
+                <meta property='twitter:title' content="Illgod | Official Website" />
+                <meta property='twitter:image' content={ogImageUrl} />
+                <meta name="twitter:creator" content="@reachmhp"/>
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <SlugNavigation />
             <MiniLanding header={release.title} />
 
@@ -82,11 +103,40 @@ export async function getServerSideProps({ params: {slug}}){
 
     const tracklist = release.tracklist.split(",")
 
+    cloudinary.config({
+        cloud_name: 'dbqn6vejg'
+    })
+
+    const cloudinaryUrl = cloudinary.url('metaSlug_oal5ip', {
+        width: 1012,
+        height: 506,
+        transformation: [
+          {
+            fetch_format: 'auto',
+            quality: 'auto'
+          },
+          {
+            overlay: {
+              url: result.metaImage
+            }
+          },
+          {
+            flags: 'layer_apply',
+            width: 260,
+            height: 280,
+            gravity: 'north_west',
+            x: 400,
+            //y: 42
+            y: 150
+          }
+        ]
+    })
+
     return {
         props: {
             release: release,
             tracklist: tracklist,
-            //ogImageUrl: cloudinaryUrl
+            ogImageUrl: cloudinaryUrl
         }
     }
 }
