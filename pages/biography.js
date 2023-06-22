@@ -14,7 +14,7 @@ function Biography() {
             <Head>
                 <title>Illgod | Biography</title>
                 <meta name="description" content="Illgod | Official Website" />
-                <meta property='og:description' content="Illgod Releases" />
+                <meta property='og:description' content="Illgod Biography" />
                 <meta  property='og:image' itemProp="image" content='https://res.cloudinary.com/dbqn6vejg/image/upload/v1687444504/metaBio_k3rc17.jpg'/>
                 <meta  property='og:image:secure_url' content='https://res.cloudinary.com/dbqn6vejg/image/upload/v1687444504/metaBio_k3rc17.jpg'/>
                 <meta property="og:url" content="https://illgod.vercel.app/biography" />
