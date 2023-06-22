@@ -23,7 +23,7 @@ function TheRelease({release, tracklist}) {
                             <Image src={`/${release.img}`} width={300} height={300} alt={release.title} />
                         </div>
                         <h4 className='text-md md:text-xl text-center py-5'>{release.description}</h4>
-                        <p className='text-sm italic md:text-lg text-justify md:mx-16 lg:mx-32'>{release.content}</p>
+                        <p className='text-sm italic md:text-lg text-justify md:mx-12 lg:mx-20'>{release.content}</p>
 
                         <main className='flex justify-center items-center mt-8'>
                                 
@@ -57,9 +57,9 @@ function TheRelease({release, tracklist}) {
 
                     <div className='w-full mt-7 lg:mt-0 grid grid-cols-1 justify-items-center content-center'>
                         <h3 className='text-2xl text-center lg:text-left pb-5 lg:pl-9'>tracklist</h3>
-                        <ul className='flex flex-col items-center lg:items-start'>
+                        <ul className='flex flex-col items-center lg:items-center'>
                             {tracklist.map((track) => 
-                                <li className="italic font-extralight text-left text-sm py-1 lg:pl-9" key={track}>{track.replaceAll("comma", ",")}</li>
+                                <li className="italic font-extralight text-center text-sm py-1 lg:pl-9" key={track}>{track.replaceAll("comma", ",")}</li>
                             )}
                         </ul>
                     </div>
