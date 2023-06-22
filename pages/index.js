@@ -4,6 +4,8 @@ import Navigation from '@/components/Navigation'
 import AfterLanding from '@/components/AfterLanding'
 import Footer from '@/components/Footer'
 
+import { motion } from 'framer-motion'
+
 
 
 export default function Home() {
@@ -15,12 +17,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <motion.main
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <Navigation />
         <Landing />
         <AfterLanding />
         <Footer />
-      </main>
+      </motion.main>
     </>
   )
 }

@@ -5,6 +5,8 @@ import MiniLanding from '@/components/MiniLanding'
 import BioContent from '@/components/BioContent'
 import Footer from '@/components/Footer'
 
+import { motion } from 'framer-motion'
+
 
 function Biography() {
     return (
@@ -16,12 +18,17 @@ function Biography() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <motion.main
+                exit={{ opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+            >
                 <Navigation />
                 <MiniLanding header="Biography" />
                 <BioContent />
                 <Footer />
-            </main>
+            </motion.main>
         </>
     )
 }
