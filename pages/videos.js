@@ -2,6 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Navigation from '@/components/Navigation'
 import MiniLanding from '@/components/MiniLanding'
+import VideosContent from '@/components/VideosContent'
+import Footer from '@/components/Footer'
 
 function Videos() {
     return (
@@ -15,6 +17,8 @@ function Videos() {
             <main>
                 <Navigation />
                 <MiniLanding header={"Videos"} />
+                <VideosContent />
+                <Footer />
             </main>
         </>
     )

@@ -40,10 +40,10 @@ function Loading(url){
 
 export default function App({ Component, pageProps }) {
   return (
-    <AnimatePresence>
+    <>
       <Loading />
       <Component {...pageProps} />
-    </AnimatePresence>
+    </>
     
   )
 }
