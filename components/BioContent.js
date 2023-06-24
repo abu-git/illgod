@@ -16,7 +16,7 @@ function BioContent() {
             </p>
 
             <p className='text-justify text-xl text-black mt-8 md:mt-12'>
-                He has also released collaborative projects including &quot;Metamorphism&quot; with PlasthicSlash and MC Lace as the music group&quot;P-Town&apos;s Finest&quot; plus quite a number of beat tapes.
+                He has also released collaborative projects including &quot;Metamorphism&quot; with PlasthicSlash and MC Lace as the music group &quot;P-Town&apos;s Finest&quot; plus quite a number of beat tapes.
             </p>
 
             <p className='text-justify text-xl text-black mt-8 md:mt-12'>
