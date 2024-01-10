@@ -22,7 +22,7 @@ function Footer() {
         </div>
 
         <h4 className='text-sm text-center mt-32'>
-            <a href='https://sam-cv.vercel.app' target='_blank' rel='noreferrer'>©2023 Design by Samuel Abu</a>
+            <a href='https://sam-cv.vercel.app' target='_blank' rel='noreferrer'>©2024 Design by Samuel Abu</a>
         </h4>
     </div>
     )
